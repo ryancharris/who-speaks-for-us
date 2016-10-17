@@ -1,3 +1,10 @@
+## Who Speaks for Us?
+#### Find out.
+
+Look up your national Congressional representatives (both House and Senate) and get their contact information. 
+
+Then, let them know what YOU have to say!
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.  
