@@ -8,8 +8,9 @@ class Header extends React.Component {
   render() {
     return (
         <div className="app-header">
-          <h1 className="app-title">Who <span>Speaks</span> for You?</h1>
-          <h2 className="search-title">Find out.</h2>
+          <h3 className="top-title">...but more importantly</h3>
+          <bold><h1 className="app-title">Who Speaks for <span>You</span>?</h1></bold>
+          <h3 className="search-title">Find out.</h3>
         </div>
     );
   }
