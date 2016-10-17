@@ -1,0 +1,145 @@
+/*		GENERAL		*/
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica', sans-serif;
+  color: #fff;
+}
+
+/*		LAYOUT 		*/
+.app {
+  background: linear-gradient(60deg, rgba(239, 83, 80, 0.6), rgba(41, 182, 246, 0.6)), url('../img/us-capitol.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+	max-width: 960px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	min-width: 100vw;
+	border: 10px solid rgba(255, 255, 255, 0.5);
+	text-align: center;
+}
+
+/*		HEADER  	*/
+.app-header {
+	margin: 40px 0 20px 0;
+}
+
+.app-title {
+	margin: 0 0 40px 0;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	font-size: 2.75em;
+	line-height: 1.4;
+}
+
+.app-title span {
+	font-weight: 700;
+}
+
+.search-title {
+	font-weight: 200;
+}
+
+/*		BODY 		*/
+.app-search {
+	display: flex;
+	justify-content: center;
+	height: 50px;
+}
+
+.user-search {
+	border-radius: 10px;
+}
+
+.user-search input {
+	height: 100%;
+	flex: 1 1 200px;
+	border-color: rgba(255, 23, 68, 0.65);
+	border-style: solid;
+	border-width: 4px 3px 4px 4px;
+	border-radius: 5px 0 0 5px;
+	transition: all 0.25s ease-out;
+}
+
+.user-search input:focus {
+	border-color: rgba(255, 23, 68, 1);
+	transition: all 0.25s ease-out;
+}
+
+.user-search input[placeholder] {
+	font-size: 18px;
+	padding-left: 10px;
+}
+
+.search-button {
+	flex-basis: 50px;
+	border: none;
+	border-radius: 0 5px 5px 0;
+	padding: none;
+	background: rgba(255, 23, 68, 1);
+	font-size: 18px;
+}
+
+/*		FOOTER 		*/
+#footer {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex: 1 1 40px;
+}
+
+.copyright {
+	margin: 0;
+	font-weight: 200;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+/* MEDIA QUERY: Tablet view */
+@media all and (min-width:500px) {
+
+	/*.wrapper {
+		padding: 20px;
+	}*/
+
+	.app-header {
+		margin: 100px 0 20px 0;
+	}
+
+	.app-title {
+		margin-bottom: 75px;
+		font-size: 3.5em;
+	}
+
+	.search-title {
+		margin-bottom: 10px;
+		font-size: 2em;
+	}
+}
+
+/* MEDIA QUERY: Widescreen view*/
+@media all and (min-width:1000px) {
+
+
+}
+
+
+
+
+
+
