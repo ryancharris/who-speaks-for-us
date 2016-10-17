@@ -1,17 +1,21 @@
 import React from 'react';
-import Header from './Header';
+import Footer from './Footer';
 
 class Results extends React.Component {
   constructor() {
     super();
+    this.state = {
+      stateName: '',
+      results: {}
+    };
   }
 
   render() {
     return (
     	<div className="app">
 	        <div className="wrapper">
-	          <Header />
 	          <h1>RESULTS PAGE</h1>
+            <Footer />
 	        </div>
      	</div>
     );

@@ -19,12 +19,8 @@ class SearchBar extends React.Component {
 
   goToResults(event) {
     event.preventDefault();
-    console.log('form submitted');
-
     const stateId = this.searchInput.value;
-    console.log(`going to /state/${stateId}`);
-    
-    this.context.router.transitionTo(`/store/${stateId}`);
+    this.context.router.transitionTo(`/state/${stateId}`);
   }
 
   render() {

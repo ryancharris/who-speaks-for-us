@@ -25,7 +25,7 @@ body {
 
 .wrapper {
 	max-width: 960px;
-	padding: 20px 10px;
+	padding: 20px 20px 4px;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -36,27 +36,29 @@ body {
 
 /*		HEADER  	*/
 .app-header {
-	margin: 60px 0 15px 0;
+	margin: 20px 0 15px 0;
 }
 
 .top-title {
 	margin-bottom: 25px;
 	font-family: 'Comfortaa', cursive;
 	font-weight: 300;
-	font-size: 20px;
+	font-size: 18px;
 
 }
 
 .app-title {
-	font-weight: 100;
-	margin-bottom: 110px;
-	font-size: 2.75em;
-	line-height: 1.4;
+	font-weight: 700;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 80px;
+	font-size: 48px;
+	line-height: 1.35;
+	letter-spacing: 5px;
 }
 
 .app-title span {
 	font-weight: 700;
-	color: #FF5252;
+	color: #FF1744;
 }
 
 .search-title {
@@ -137,12 +139,12 @@ button#search-button {
 	justify-content: center;
 	list-style: none;
 	padding: 0;
-	margin: 0 0 8px 0
+	margin-bottom: 10px;
 }
 
 .social {
-	margin: 0 20px;
-	font-size: 1.25em;
+	margin: 0 25px;
+	font-size: 18px;
 }
 
 .social a:link,
@@ -152,15 +154,17 @@ button#search-button {
 }
 
 .social a:hover {
-	color: rgba(255, 23, 68, 0.75);
+	color: #FF1744;
 	transition: all 0.5s ease-out;
 }
 
 .copyright {
+	color: #fff;
 	margin: 0;
 	font-weight: 100;
-	font-size: 0.75em;
-	font-family: 'Lucidia', sans-serif;
+	font-size: 11px;
+	font-family: 'Helvetica', sans-serif;
+	letter-spacing: 1.5px;
 }
 
 /* MEDIA QUERY: Tablet view */
