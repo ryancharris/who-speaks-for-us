@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="app-search">
+      <div className="search-block">
         <form className="user-search" onFocus={this.buttonActivate} onBlur={this.buttonDeactivate} onSubmit={this.goToResults}>
           <input type="text" required placeholder="e.g. Pennsylvania" ref={(input) => {this.searchInput = input}} />
           <button id="search-button" className="deactivated" type="submit">🔍</button>

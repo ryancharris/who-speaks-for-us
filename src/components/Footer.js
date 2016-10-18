@@ -15,7 +15,7 @@ class Footer extends React.Component {
             <li className="social"><a href="http://twitter.com/ryan_c_harris"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
           </ul>
         </div>
-        <p className="copyright">🔨 by Ryan in Philly 🍻</p>
+        <p className="copyright">Ryan Harris</p>
       </div>
     );
   }
