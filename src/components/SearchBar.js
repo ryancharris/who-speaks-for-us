@@ -9,12 +9,11 @@ class SearchBar extends React.Component {
   }
 
   buttonActivate() {
-    document.querySelector('#search-button').className = "activated";
-    
+    document.querySelector('.deactivated').className = "search-button activated";
   }
 
   buttonDeactivate() {
-    document.querySelector('#search-button').className = "deactivated";
+    document.querySelector('.activated').className = "search-button deactivated";
   }
 
   goToResults(event) {
@@ -25,12 +24,12 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="search-block">
-        <form className="user-search" onFocus={this.buttonActivate} onBlur={this.buttonDeactivate} onSubmit={this.goToResults}>
-          <input type="text" required placeholder="e.g. Pennsylvania" ref={(input) => {this.searchInput = input}} />
-          <button id="search-button" className="deactivated" type="submit">🔍</button>
-        </form>
-      </div>
+      <form className="user-search" onFocus={this.buttonActivate} onBlur={this.buttonDeactivate} onSubmit={this.goToResults}>
+        <input type="text" required placeholder="e.g. Pennsylvania" ref={(input) => {this.searchInput = input}} />
+      {/* <button id="search-button" className="deactivated" type="submit">🔍</button> */}
+        
+        <input className="search-button deactivated" type="submit" value="🔍" />
+      </form>
     );
   }
 }

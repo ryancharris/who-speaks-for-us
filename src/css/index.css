@@ -1,4 +1,4 @@
-/*		GENERAL		*/
+/*		GENERAL	STYLES	*/
 html {
 	box-sizing: border-box;
 }
@@ -14,7 +14,7 @@ body {
   color: #fff;
 }
 
-/*		LAYOUT 		*/
+/*		APP LAYOUT 		*/
 .app {
   background: linear-gradient(80deg, rgba(239, 83, 80, 0.6), rgba(41, 182, 246, 0.7)), url('../img/us-capitol.jpg');
   background-repeat: no-repeat;
@@ -24,23 +24,25 @@ body {
 }
 
 .wrapper {
-	max-width: 960px;
-	padding: 10px 10px 5px 10px;
-	display: flex;
-	flex-direction: column;
+	padding: 5px 10px;
 	min-height: 100vh;
 	min-width: 100vw;
-	border: 15px solid rgba(255, 255, 255, 0.25);
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	border: 10px solid rgba(255, 255, 255, 0.25);
 }
 
-/*		HEADER  	*/
+/*		APP HEADER  	*/
 .app-header {
-	margin: 75px 0 15px 0;
+	margin: 15% 0 15px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .top-title {
-	margin-bottom: 25px;
+	margin: 0 0 10px;
 	font-family: 'Comfortaa', cursive;
 	font-weight: 300;
 	font-size: 18px;
@@ -48,12 +50,13 @@ body {
 }
 
 .app-title {
+	margin: 18px 0 60px;
 	font-weight: 700;
 	font-family: 'Montserrat', sans-serif;
-	margin-bottom: 60px;
-	font-size: 48px;
+	font-size: 42px;
 	line-height: 1.35;
 	letter-spacing: 5px;
+
 }
 
 .app-title span {
@@ -68,21 +71,14 @@ body {
 	font-size: 24px;
 }
 
-/*		BODY 		*/
-.search-block {
+/*		SEARCH BAR 		*/
+.user-search {
 	display: flex;
 	justify-content: center;
-	height: 46px;
-	/*border: 1px solid green;*/
 }
 
-.user-search {
-	border-radius: 10px;
-}
-
-.user-search input {
-	height: 100%;
-	width: 215px;
+.user-search input[type=text] {
+	flex-basis: 50%;
 	border-color: #FF5252;
 	border-style: solid;
 	border-width: 4px 0 4px 4px;
@@ -91,33 +87,37 @@ body {
 	outline: none;
 }
 
-.user-search input:focus {
-	width: 245px;
+.user-search input[type=text]:focus {
 	border-color: #FF1744;
 	transition: all 0.35s ease-in-out;
 }
 
-.user-search input[placeholder] {
-	font-size: 16px;
+.user-search input[type=text][placeholder] {
+	font-size: 18px;
+	line-height: 1.5;
 	padding-left: 10px;
 }
 
-button#search-button {
-	width: 40px;
-	border: none;
+/*.user-search input[type=text][placeholder]:focus {
+	line-height: 1.65;
+}*/
+
+.search-button {
+	border: 1px;
 	border-radius: 0 5px 5px 0;
-	padding: none;
+	padding: 0 10px 0 11px;
 	font-size: 18px;
-	height: 100%;
+	background-color: #FF5252;
+	transition: all 0.25s ease-out;
 }
 
 .activated {
-	background: #FF1744;
+	background-color: #FF1744;
 	transition: all 0.25s ease-out;
 }
 
 .deactivated {
-	background: #FF5252;
+	background-color: #FF5252;
 	transition: all 0.25s ease-out;
 }
 
@@ -126,8 +126,7 @@ button#search-button {
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: column;
-	align-items: center;
-	flex: 1 1 40px;
+	flex: 1;
 }
 
 .social-links {
@@ -139,12 +138,12 @@ button#search-button {
 	justify-content: center;
 	list-style: none;
 	padding: 0;
-	margin-bottom: 8px;
+	margin: 0 0 8px 0;
 }
 
 .social {
-	margin: 0 12px;
 	font-size: 16px;
+	flex-basis: 20%;
 }
 
 .social a:link,
@@ -168,15 +167,11 @@ button#search-button {
 	font-weight: 300;
 	font-size: 12px;
 	font-family: 'Helvetica', sans-serif;
-	letter-spacing: 2px;
+	letter-spacing: 1px; 
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
-	.wrapper {
-		padding: 10px 30px 4px;
-	}
 
 	/* Header Text*/
 	.top-title {
@@ -191,18 +186,6 @@ button#search-button {
 		font-size: 32px;
 	}
 
-	/* Search Block*/
-	.user-search input {
-		width: 265px;
-	}
-
-	.user-search input:focus {
-		width: 295px;
-	}
-
-	button#search-button {
-		width: 50px;
-	}
 }
 
 /* Medium devices (desktops, 992px and up) */
