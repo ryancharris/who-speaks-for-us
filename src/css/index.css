@@ -143,7 +143,7 @@ body {
 
 .social {
 	font-size: 16px;
-	flex-basis: 20%;
+	flex-basis: 50px;
 }
 
 .social a:link,
@@ -186,10 +186,20 @@ body {
 		font-size: 32px;
 	}
 
+	/* Search Bar */
+	.user-search input[type=text] {
+		flex-basis: 40%;
+	}
+
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
+	/* Search Bar */
+	.user-search input[type=text] {
+		flex-basis: 30%;
+	}
 
 }
 
