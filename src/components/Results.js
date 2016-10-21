@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './Footer';
+import Card from './Card';
 
 class Results extends React.Component {
   constructor() {
@@ -14,7 +15,17 @@ class Results extends React.Component {
     return (
     	<div className="app">
 	        <div className="wrapper">
-	          <h1>RESULTS PAGE</h1>
+	          <h3 className="results-state">California</h3>
+            <div className="results-wrapper">
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+            </div>
             <Footer />
 	        </div>
      	</div>
