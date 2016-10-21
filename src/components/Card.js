@@ -9,17 +9,15 @@ class Card extends React.Component {
 	render() {
 		return (
 			<div className="card">
-				<h3>Sen. Ryan Harris</h3>
 				<img src={headshot} alt="" />
+				<h3>Sen. Ryan Harris</h3>
 				<p>Pennsylvania (I)</p>
 				<ul className="card-links">
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
-					<li>5</li>
-					<li>6</li>
-					<li>7</li>
+					<li><a href="#"><i className="fa fa-youtube" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i className="fa fa-phone" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i className="fa fa-globe" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
 		);
