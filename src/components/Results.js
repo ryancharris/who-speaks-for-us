@@ -18,6 +18,19 @@ class Results extends React.Component {
 	          <h3 className="results-state">California</h3>
             <div className="results-wrapper">
               <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
             </div>
             <Footer />
 	        </div>
