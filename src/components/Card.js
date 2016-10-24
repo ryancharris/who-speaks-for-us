@@ -11,7 +11,7 @@ class Card extends React.Component {
 			<div className="card">
 				<img src={headshot} alt="" />
 				<h3>Sen. Ryan Harris</h3>
-				<p>Pennsylvania (I)</p>
+				<p>{this.props.state} (I)</p>
 				<ul className="card-links">
 					<li><a href="#"><i className="fa fa-youtube" aria-hidden="true"></i></a></li>
 					<li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>

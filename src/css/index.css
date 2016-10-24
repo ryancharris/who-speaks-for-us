@@ -43,11 +43,11 @@ body {
 
 .results-state {
 	margin: 0;
-	padding: 25px;
+	padding: 18px;
 	font-size: 28px;
 	font-family: 'Montserrat', sans-serif;
 	letter-spacing: 1px;
-	background: linear-gradient(145deg, rgba(239, 83, 80, 0.99) 4%, rgba(41, 182, 246, 0.99));
+	/*background: linear-gradient(145deg, rgba(239, 83, 80, 0.99) 4%, rgba(41, 182, 246, 0.99));*/
 }
 
 /*		APP HEADER  	*/
