@@ -10,7 +10,7 @@ class Card extends React.Component {
 		return (
 			<div className="card">
 				<img src={headshot} alt="" />
-				<h3>Sen. Ryan Harris</h3>
+				<h3>{this.props.name}</h3>
 				<p>{this.props.state} (I)</p>
 				<ul className="card-links">
 					<li><a href="#"><i className="fa fa-youtube" aria-hidden="true"></i></a></li>
