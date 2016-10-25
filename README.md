@@ -17,4 +17,8 @@ To run:
 
 =====================
 
+![Who Speaks for Us?](http://github.com/ryancharris/who-speaks-for-us/blob/master/screenshot.jpg "Who Speaks for Us?")
+
+=====================
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
