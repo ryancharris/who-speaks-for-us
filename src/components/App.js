@@ -24,10 +24,6 @@ class App extends React.Component {
     const apiKey = 'ec606ee7e9324581a094bd96aeb3d15e';
     const url = 'http://congress.api.sunlightfoundation.com/legislators?state_name=' + state + '&apikey=' + apiKey;
 
-    console.log('state', state);
-    console.log('apiKey', apiKey);
-    console.log('url', url);
-
     axios.get(url)
       .then((res) => {
         console.log('res', res);
@@ -52,7 +48,6 @@ class App extends React.Component {
     	<div className="app">
 	        <div className="wrapper">
 	          <Results state={this.state.stateName} />
-            <button onClick={this.requestData}>Test</button>
 	        </div>
      	</div>
     );
