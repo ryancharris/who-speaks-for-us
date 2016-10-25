@@ -17,7 +17,7 @@ To run:
 
 =====================
 
-![Who Speaks for Us?](http://github.com/ryancharris/who-speaks-for-us/blob/master/screenshot.jpg "Who Speaks for Us?")
+![Who Speaks for Us?](http://github.com/ryancharris/who-speaks-for-us/screenshot.jpg "Who Speaks for Us?")
 
 =====================
 
