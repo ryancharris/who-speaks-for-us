@@ -1,33 +1,24 @@
 import React from 'react';
 import Card from './Card';
-import Footer from './Footer';
 
 class Results extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.createCards = this.createCards.bind(this);
+  }
+
+  createCards() {
+    const members = this.props.populateResults();
+    console.log(members);
   }
 
   render() {
+
     return (
       <div>
-        {/*<h3 className="results-state">{this.props.state}</h3>*/}
         <div className="results-wrapper">
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
-          <Card state={this.props.state} />
+          {this.createCards()}
         </div>
-        <Footer />
       </div>
     );
   }

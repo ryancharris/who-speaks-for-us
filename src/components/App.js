@@ -8,6 +8,7 @@ class App extends React.Component {
     super(props);
 
     this.requestData = this.requestData.bind(this);
+    this.populateResults = this.populateResults.bind(this);
 
     this.state = {
       stateName: this.props.params.stateId,
@@ -16,7 +17,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    // Do AJAX request based on { state: stateID }
     this.requestData();
+  }
+
+  populateResults() {
+    return this.state.results;
   }
 
   requestData() {
@@ -26,28 +32,25 @@ class App extends React.Component {
 
     axios.get(url)
       .then((res) => {
-        console.log('res', res);
-
+        // Create object with data from response
         let responseResults = res.data.results;
-        console.log('responseResults', responseResults);
-
+        // Set state with copy of response data
         this.setState({
           results: responseResults
         });
-
+        // Create Cards based on the response
+        this.populateResults();
       })
-
       .catch((err) => {
         console.log('An error occurred =>', err);
       });
-
   }
 
   render() {
     return (
     	<div className="app">
 	        <div className="wrapper">
-	          <Results state={this.state.stateName} />
+	          <Results state={this.state.stateName} populateResults={this.populateResults} />
 	        </div>
      	</div>
     );

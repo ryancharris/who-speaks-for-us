@@ -38,7 +38,7 @@ body {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-bottom: 35px;
+	/*margin-bottom: 35px;*/
 }
 
 .results-state {

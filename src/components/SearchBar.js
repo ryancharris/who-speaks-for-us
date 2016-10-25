@@ -3,11 +3,9 @@ import React from 'react';
 class SearchBar extends React.Component {
   constructor() {
     super();
-    this.state = { value: "" };
     this.buttonActivate = this.buttonActivate.bind(this);
     this.buttonDeactivate = this.buttonDeactivate.bind(this);
     this.goToResults = this.goToResults.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
   }
 
   buttonActivate() {
@@ -20,13 +18,11 @@ class SearchBar extends React.Component {
 
   goToResults(event) {
     event.preventDefault();
+    // Get user input
     const stateId = this.searchInput.value;
+    // Re-route to Results component
     this.context.router.transitionTo(`/state/${stateId}`);
   }
-
-  // handleChange(event) {
-  //   this.setState({ value: event.target.value });
-  // }
 
   render() {
     return (
