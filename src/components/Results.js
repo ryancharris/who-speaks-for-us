@@ -17,6 +17,8 @@ class Results extends React.Component {
 
       // Unique id for each Card
       let key = member.state_name + member.last_name + i;
+      let party = member.party;
+      let bioguide = member.bioguide_id;
 
       // Format name
       let title = member.title;
@@ -26,10 +28,8 @@ class Results extends React.Component {
       // Create social media list
       let socialList = this.createSocialList(member);
 
-      let party = member.party;
 
-
-      cards.push(<Card key={key} name={name} state={member.state_name} socialList={socialList} party={party} />);
+      cards.push(<Card key={key} name={name} state={member.state_name} socialList={socialList} party={party} bioguide={bioguide} />);
     }
 
     return cards;

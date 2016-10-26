@@ -5,6 +5,9 @@ Look up your national Congressional representatives (both House and Senate) and 
 
 Then, let them know what YOU have to say!
 
+Thanks to:
+[The @unitedstates Project](https://theunitedstates.io/) for collating and hosting the profile images.
+
 =====================
 
 To run:
