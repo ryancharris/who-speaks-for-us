@@ -138,8 +138,7 @@ body {
 .card {
 	display: flex;
 	flex-direction: column;
-	flex: 1 1 300px;
-	background: linear-gradient(165deg, #00C853, #00C853 65%, #69F0AE);
+	flex: 0 1 300px;
 }
 
 .card h3 {
@@ -156,7 +155,7 @@ body {
 }
 
 .card img {
-	max-width: 100%;
+	width: 100%;
 }
 
 .card ul {
@@ -174,6 +173,18 @@ body {
 .card a {
 	color: #fff;
 	font-size: 14px;
+}
+
+.republican {
+	background: linear-gradient(165deg, #D50000, #D50000 65%, #FF5252);
+}
+
+.democrat {
+	background: linear-gradient(165deg, #0091EA, #0091EA 65%, #40C4FF);
+}
+
+.independent {
+	background: linear-gradient(165deg, #00C853, #00C853 65%, #69F0AE);
 }
 
 /*		FOOTER 		*/
