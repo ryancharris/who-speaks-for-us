@@ -16,7 +16,7 @@ class Results extends React.Component {
       let member = results[i];
 
       // Unique id for each Card
-      let key = this.props.state + '-member-' + i;
+      let key = member.state_name + member.last_name + i;
 
       // Format name
       let title = member.title;
@@ -26,14 +26,26 @@ class Results extends React.Component {
       // Create social media list
       let socialList = this.createSocialList(member);
 
-      cards.push(<Card key={key} name={name} state={member.state_name} socialList={socialList} />);
+      let party = member.party;
+
+
+      cards.push(<Card key={key} name={name} state={member.state_name} socialList={socialList} party={party} />);
     }
 
     return cards;
   }
 
   createSocialList(member) {
-    console.log(member);
+    // Parse out member's social information
+    let facebook = member.facebook_id;
+    let email = member.oc_email;
+    let phone = member.phone;
+    let twitter = member.twitter_id;
+    let website = member.website;
+    // Create a list with social icons
+    let socialList = []
+    // Return list to createCards()
+    
   }
 
   render() {
