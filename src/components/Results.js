@@ -11,25 +11,17 @@ class Results extends React.Component {
     // Get member info from App's state
     const results = this.props.populateResults();
     const cards = [];
+
     // Create array from results object
     for (let i = 0; i < results.length; i++) {
       let member = results[i];
-
-      // Unique id for each Card
-      let key = member.state_name + member.last_name + i;
-      let party = member.party;
-      let bioguide = member.bioguide_id;
-
       // Format name
-      let title = member.title;
       let middlename = (member.middle_name) ? ' ' + member.middle_name + ' ' : ' ';
-      let name = title + '. ' + member.first_name + middlename + member.last_name;
-
+      let name = member.title + '. ' + member.first_name + middlename + member.last_name;
       // Create social media list
       let socialList = this.createSocialList(member);
-
-
-      cards.push(<Card key={key} name={name} state={member.state_name} socialList={socialList} party={party} bioguide={bioguide} />);
+      // Create Card with necessary props
+      cards.push(<Card key={member.bioguide_id} name={name} state={member.state_name} socialList={socialList} party={member.party} bioguide={member.bioguide_id} />);
     }
 
     return cards;
