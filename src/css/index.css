@@ -139,6 +139,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	flex: 0 1 300px;
+	margin: 10px;
 }
 
 .card h3 {
