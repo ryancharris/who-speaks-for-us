@@ -9,6 +9,7 @@ class App extends React.Component {
 
     this.requestData = this.requestData.bind(this);
     this.populateResults = this.populateResults.bind(this);
+    this.validateUserInput = this.validateUserInput.bind(this);
 
     this.state = {
       stateName: this.props.params.stateId,
@@ -21,14 +22,22 @@ class App extends React.Component {
     this.requestData(1);
   }
 
+  componentWillUnmount() {
+    // When component unmounts, return {this.state.results} to an empty array
+    this.setState({
+      results: []
+    });
+  }
+
   populateResults() {
     return this.state.results;
   }
 
   requestData(pageNum) {
-    const state = this.state.stateName;
+    let state = this.validateUserInput(this.state.stateName);
+
     const apiKey = 'ec606ee7e9324581a094bd96aeb3d15e';
-    const url = 'http://congress.api.sunlightfoundation.com/legislators?state_name=' + state + '&per_page=50&order=last_name_asc' + '&page=' + pageNum + '&apikey=' + apiKey;
+    const url = 'http://congress.api.sunlightfoundation.com/legislators' + state + '&per_page=50&order=last_name_asc' + '&page=' + pageNum + '&apikey=' + apiKey;
 
     let currentState = this.state.results;
 
@@ -54,6 +63,19 @@ class App extends React.Component {
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  validateUserInput(searchInput) {
+    let searchParams = '';
+
+    if (searchInput.length === 2) {
+      searchParams = '?state=' + searchInput.toUpperCase();
+      return searchParams;
+    } else if (searchInput.length > 2) {
+      searchParams = '?state_name=' + searchInput.charAt(0).toUpperCase() + searchInput.slice(1);
+      return searchParams;
+    }
+
   }
 
   render() {
