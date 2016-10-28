@@ -20,7 +20,8 @@ To run:
 
 =====================
 
-![Who Speaks for Us?](https://raw.githubusercontent.com/ryancharris/who-speaks-for-us/master/screenshot.jpg "Who Speaks for Us?")
+![Who Speaks for Us?](https://raw.githubusercontent.com/ryancharris/who-speaks-for-us/master/search-screenshot.jpg "Who Speaks for Us?")
+![Who Speaks for Us?](https://raw.githubusercontent.com/ryancharris/who-speaks-for-us/master/results-screenshot.jpg "Who Speaks for Us?")
 
 =====================
 
