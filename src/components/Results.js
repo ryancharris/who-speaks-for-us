@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import BackButton from './BackButton';
 
 class Results extends React.Component {
   constructor(props) {
@@ -82,6 +83,7 @@ class Results extends React.Component {
       <div>
         <div className="results-wrapper">
           {this.createCards()}
+          <BackButton />
         </div>
       </div>
     );

@@ -25,6 +25,7 @@ body {
 
 .wrapper {
 	/*padding: 0 10px;*/
+	position: relative;
 	min-height: 100vh;
 	min-width: 100vw;
 	text-align: center;
@@ -48,6 +49,28 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	letter-spacing: 1px;
 	/*background: linear-gradient(145deg, rgba(239, 83, 80, 0.99) 4%, rgba(41, 182, 246, 0.99));*/
+}
+
+.back-button a:link,
+	.back-button a:visited {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 0 30px 20px 0;
+	color: rgba(255, 255, 255, 0.5);
+	transition: all 0.5s ease-out;
+	text-decoration: none;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 400;
+}
+
+.back-button a:hover {
+	color: rgba(255, 255, 255, 0.95);
+	transition: all 0.5s ease-out;
+}
+
+.back-button p {
+	margin: 0;
 }
 
 /*		APP HEADER  	*/
@@ -292,9 +315,3 @@ body {
 @media (min-width: 1200px) { 
 
 }
-
-
-
-
-
-
