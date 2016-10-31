@@ -21,9 +21,10 @@ class Card extends React.Component {
 	}
 
 	getPhoto() {
-		const bioguide = this.props.bioguide;
 		// Images hosted on: github.com/unitedstates/images
+		const bioguide = this.props.bioguide;
 		const imgLink = `http://theunitedstates.io/images/congress/450x550/${bioguide}.jpg`;
+
 		return imgLink;
 	}
 

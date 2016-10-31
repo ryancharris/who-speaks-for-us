@@ -34,10 +34,9 @@ class App extends React.Component {
   }
 
   requestData(pageNum) {
-    let state = this.validateUserInput(this.state.stateName);
-
     const apiKey = 'ec606ee7e9324581a094bd96aeb3d15e';
-    const url = 'http://congress.api.sunlightfoundation.com/legislators' + state + '&per_page=50&order=chamber___desc,last_name__asc' + '&page=' + pageNum + '&apikey=' + apiKey;
+    let state = this.validateUserInput(this.state.stateName);
+    let url = `http://congress.api.sunlightfoundation.com/legislators${state}&per_page=50&order=chamber___desc,last_name__asc&page=${pageNum}&apikey=${apiKey}`;
 
     let currentState = this.state.results;
 
@@ -69,10 +68,10 @@ class App extends React.Component {
     let searchParams = '';
 
     if (searchInput.length === 2) {
-      searchParams = '?state=' + searchInput.toUpperCase();
+      searchParams = `?state=${searchInput.toUpperCase()}`;
       return searchParams;
     } else if (searchInput.length > 2) {
-      searchParams = '?state_name=' + searchInput.charAt(0).toUpperCase() + searchInput.slice(1);
+      searchParams = `?state_name=${searchInput.charAt(0).toUpperCase()}${searchInput.slice(1)}`;
       return searchParams;
     }
 
