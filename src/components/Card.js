@@ -6,6 +6,7 @@ class Card extends React.Component {
 		super();
 		this.getPhoto = this.getPhoto.bind(this);
 		this.getPartyColor = this.getPartyColor.bind(this);
+		this.positionInfo = this.positionInfo.bind(this);
 	}
 
 	getPartyColor() {
@@ -22,8 +23,16 @@ class Card extends React.Component {
 	getPhoto() {
 		const bioguide = this.props.bioguide;
 		// Images hosted on: github.com/unitedstates/images
-		const imgLink = 'http://theunitedstates.io/images/congress/450x550/' + bioguide + '.jpg';
+		const imgLink = `http://theunitedstates.io/images/congress/450x550/${bioguide}.jpg`;
 		return imgLink;
+	}
+
+	positionInfo() {
+		if (this.props.chamber === 'house') {
+			return `District ${this.props.district}`;
+		} else {
+			return `${this.props.rank.charAt(0).toUpperCase()}${this.props.rank.slice(1)}`;
+		}
 	}
 
 	render() {
@@ -31,7 +40,7 @@ class Card extends React.Component {
 			<div className={this.getPartyColor()}>
 				<img src={this.getPhoto()} alt="" />
 				<h3>{this.props.name}</h3>
-				<p>{this.props.state} ({this.props.party})</p>
+				<p>{this.positionInfo()} ({this.props.party})</p>
 				<ul className="card-links">
 					{this.props.socialList}
 				</ul>

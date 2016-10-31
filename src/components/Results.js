@@ -22,7 +22,7 @@ class Results extends React.Component {
       // Create social media list
       let socialList = this.createSocialList(member);
       // Create Card with necessary props
-      cards.push(<Card key={member.bioguide_id} name={name} state={member.state_name} socialList={socialList} party={member.party} bioguide={member.bioguide_id} />);
+      cards.push(<Card key={member.bioguide_id} name={name} state={member.state_name} socialList={socialList} party={member.party} bioguide={member.bioguide_id} chamber={member.chamber} rank={member.state_rank} district={member.district} />);
     }
 
     return cards;
