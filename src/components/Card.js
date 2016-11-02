@@ -1,5 +1,4 @@
 import React from 'react';
-import headshot from '../img/headshot.jpg';
 
 class Card extends React.Component {
 	constructor() {
@@ -39,7 +38,9 @@ class Card extends React.Component {
 	render() {
 		return (
 			<div className={this.getPartyColor()}>
-				<img src={this.getPhoto()} alt="" />
+				<div className="profile-pic-container">
+					<img src={this.getPhoto()} alt="" />
+				</div>
 				<h3>{this.props.name}</h3>
 				<p>{this.positionInfo()} ({this.props.party})</p>
 				<ul className="card-links">

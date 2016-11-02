@@ -71,8 +71,7 @@ class App extends React.Component {
       searchParams = `?state=${searchInput.toUpperCase()}`;
       return searchParams;
     } else if (searchInput.length > 2) {
-      searchParams = `?state_name=${searchInput.charAt(0).toUpperCase()}${searchInput.slice(1)}`;
-      return searchParams;
+      return searchParams = `?state_name=${searchInput.charAt(0).toUpperCase()}${searchInput.slice(1)}`;
     }
 
   }

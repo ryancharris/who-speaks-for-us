@@ -34,12 +34,16 @@ body {
 	border: 10px solid rgba(255, 255, 255, 0.25);
 }
 
+.results-header {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+
 .results-wrapper {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	/*margin-bottom: 35px;*/
 }
 
 .results-state {
@@ -141,8 +145,9 @@ body {
 .search-button {
 	border: 1px;
 	border-radius: 0 5px 5px 0;
-	padding: 0 10px 0 11px;
+	padding: 0 11px 3px 11px;
 	font-size: 18px;
+	color: #fff;
 	background-color: #FF5252;
 	transition: all 0.25s ease-out;
 }
@@ -161,7 +166,7 @@ body {
 .card {
 	display: flex;
 	flex-direction: column;
-	flex: 0 1 300px;
+	flex: 0 1 250px;
 	margin: 10px;
 }
 
@@ -181,6 +186,11 @@ body {
 .card img {
 	width: 100%;
 }
+
+/*.profile-pic-container {
+	height: 290px;
+	overflow-y: hidden;
+}*/
 
 .card ul {
 	margin: 10px 0 20px 0;

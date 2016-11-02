@@ -5,9 +5,9 @@ import SearchBar from './SearchBar';
 import Footer from './Footer';
 
 class Search extends React.Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   render() {
     return (

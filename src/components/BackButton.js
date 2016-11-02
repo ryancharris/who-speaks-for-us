@@ -3,9 +3,9 @@ import { Link } from 'react-router'
 
 
 class BackButton extends React.Component {
-	constructor() {
-		super();
-	}
+	// constructor() {
+	// 	super();
+	// }
 
 	render() {
 		return (

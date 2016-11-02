@@ -105,6 +105,7 @@ class Results extends React.Component {
   render() {
     return (
       <div>
+        {/*<h1 className="results-header">{this.props.state.toUpperCase()}</h1>*/}
         <div className="results-wrapper">
           {this.createCards()}
           <BackButton />
