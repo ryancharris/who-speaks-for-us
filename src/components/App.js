@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import Results from './Results';
+import Results from '../pages/Results';
 
 class App extends React.Component {
   constructor(props) {

@@ -3,9 +3,9 @@ import { render } from 'react-dom';
 import { BrowserRouter, Match, Miss } from 'react-router'
 
 import './css/index.css';
-import Search from './components/Search';
 import App from './components/App';
-import NotFound from './components/NotFound';
+import Search from './pages/Search';
+import NotFound from './pages/NotFound';
 
 const Root = () => {
 	return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from './Card';
-import BackButton from './BackButton';
+import Card from '../components/Card';
+import BackButton from '../components/BackButton';
 
 class Results extends React.Component {
   constructor(props) {
@@ -99,7 +99,7 @@ class Results extends React.Component {
 
     // Return list to createCards()
     return socialList;
-    
+
   }
 
   render() {

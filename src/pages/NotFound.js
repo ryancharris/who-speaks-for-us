@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchBar from './SearchBar';
-import Footer from './Footer';
+import SearchBar from '../components/SearchBar';
+import Footer from '../components/Footer';
 import Willis from '../img/gary-coleman.png';
 
 class NotFound extends React.Component {

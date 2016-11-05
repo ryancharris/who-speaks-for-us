@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from './Header';
-import SearchBar from './SearchBar';
-import Footer from './Footer';
+import Header from '../components/Header';
+import SearchBar from '../components/SearchBar';
+import Footer from '../components/Footer';
 
 class Search extends React.Component {
   // constructor() {

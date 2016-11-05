@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router'
 
-
 class BackButton extends React.Component {
 	// constructor() {
 	// 	super();
