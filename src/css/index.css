@@ -52,7 +52,6 @@ body {
 	font-size: 28px;
 	font-family: 'Montserrat', sans-serif;
 	letter-spacing: 1px;
-	/*background: linear-gradient(145deg, rgba(239, 83, 80, 0.99) 4%, rgba(41, 182, 246, 0.99));*/
 }
 
 .back-button a:link,
@@ -74,6 +73,33 @@ body {
 }
 
 .back-button p {
+	margin: 0;
+}
+
+/*
+		PAGE: NOT FOUND
+*/
+.not-found {
+	margin-top: 10%;
+}
+
+.not-found h1 {
+	font-family: 'Montserrat', sans-serif;
+	margin: 0 0 25px 0;
+}
+
+.not-found h3 {
+	font-family: 'Comfortaa', cursive;
+	margin-bottom: 20px;
+}
+
+.willis-photo {
+	height: 150px;
+	width: 150px;
+	-mos-border-radius: 100%;
+	-ms-border-radius: 100%;
+	border-radius: 100%;
+	border: 5px solid #FF1744;
 	margin: 0;
 }
 
@@ -187,11 +213,6 @@ body {
 	width: 100%;
 }
 
-/*.profile-pic-container {
-	height: 290px;
-	overflow-y: hidden;
-}*/
-
 .card ul {
 	margin: 10px 0 20px 0;
 	display: flex;
@@ -267,7 +288,7 @@ body {
 	margin: 0;
 	font-weight: 300;
 	font-size: 12px;
-	letter-spacing: 1px; 
+	letter-spacing: 1px;
 }
 
 /* Horizontal view ports */
@@ -278,6 +299,14 @@ body {
 
 	.app-title {
 		margin-bottom: 35px;
+	}
+
+	.not-found {
+		margin-top: 10%;
+	}
+
+	.willis-photo {
+		display: none;
 	}
 }
 
@@ -298,6 +327,7 @@ body {
 	.search-title {
 		font-size: 18px;
 	}
+
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -320,6 +350,13 @@ body {
 	.user-search input[type=text] {
 		flex-basis: 40%;
 	}
+
+	/*	PAGE: NOT FOUND   */
+	.not-found {
+		/*margin-top: 120px;*/
+		/*margin-top: 10%;*/
+	}
+
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -332,6 +369,6 @@ body {
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
 
 }

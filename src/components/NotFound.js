@@ -1,4 +1,7 @@
 import React from 'react';
+import SearchBar from './SearchBar';
+import Footer from './Footer';
+import Willis from '../img/gary-coleman.png';
 
 class NotFound extends React.Component {
 //  constructor() {
@@ -9,8 +12,13 @@ class NotFound extends React.Component {
     return (
       <div className="app">
         <div className="wrapper">
-          <h1>404 Error</h1>
-          <h3>Whatcha lookin' for, Willis?</h3>
+          <div className="not-found">
+            <h1>Whatcha looking for, Willis?</h1>
+            <img src={Willis} alt="Whatcha looking for, Willis?" className="willis-photo" />
+            <h3>Try again.</h3>
+            <SearchBar />
+          </div>
+          <Footer />
         </div>
       </div>
     );
