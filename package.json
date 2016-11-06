@@ -2,6 +2,7 @@
   "name": "represent-io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ryancharris.github.io/who-speaks-for-us/",
   "devDependencies": {
     "react-scripts": "0.6.1"
   },
