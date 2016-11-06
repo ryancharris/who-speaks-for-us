@@ -51,4 +51,14 @@ class Card extends React.Component {
 	}
 }
 
+Card.propTypes = {
+	party: React.PropTypes.string.isRequired,
+	bioguide: React.PropTypes.string.isRequired,
+	chamber: React.PropTypes.string.isRequired,
+	district: React.PropTypes.number,
+	rank: React.PropTypes.string,
+	name: React.PropTypes.string.isRequired,
+	socialList: React.PropTypes.array.isRequired
+}
+
 export default Card;

@@ -115,4 +115,9 @@ class Results extends React.Component {
   }
 }
 
+Results.propTypes = {
+  state: React.PropTypes.string.isRequired,
+  populateResults: React.PropTypes.func.isRequired
+}
+
 export default Results;
