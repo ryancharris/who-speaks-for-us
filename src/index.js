@@ -7,9 +7,11 @@ import App from './components/App';
 import Search from './pages/Search';
 import NotFound from './pages/NotFound';
 
+const repo = `/${window.location.pathname}`;
+
 const Root = () => {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename={repo}>
 			<div>
 				<Match exactly pattern="/" component={Search} />
 				<Match exactly pattern="/state/:stateId" component={App} />
