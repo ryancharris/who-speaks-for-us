@@ -2,6 +2,7 @@
   "name": "represent-io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://whospeaksfor.us/",
   "devDependencies": {
     "react-scripts": "0.6.1"
   },
