@@ -36,7 +36,7 @@ class App extends React.Component {
   requestData(pageNum) {
     const apiKey = 'ec606ee7e9324581a094bd96aeb3d15e';
     let state = this.validateUserInput(this.state.stateName);
-    let url = `http://congress.api.sunlightfoundation.com/legislators${state}&per_page=50&order=chamber___desc,last_name__asc&page=${pageNum}&apikey=${apiKey}`;
+    let url = `https://congress.api.sunlightfoundation.com/legislators${state}&per_page=50&order=chamber___desc,last_name__asc&page=${pageNum}&apikey=${apiKey}`;
 
     let currentState = this.state.results;
 
