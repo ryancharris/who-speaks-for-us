@@ -156,6 +156,7 @@ body {
 	border-radius: 5px 0 0 5px;
 	transition: all 0.35s ease-in-out;
 	outline: none;
+	box-shadow: none;
 }
 
 .user-search input[type=text]:focus {
