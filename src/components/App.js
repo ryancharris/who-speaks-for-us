@@ -66,12 +66,30 @@ class App extends React.Component {
 
   validateUserInput(searchInput) {
     let searchParams = '';
+    let newStateString = '';
 
+    // If the input is 2 characters, treat it as a state abbrev (ex. PA, UT, IA)
     if (searchInput.length === 2) {
+      // Capitalize the state abbreviation
       searchParams = `?state=${searchInput.toUpperCase()}`;
       return searchParams;
+      
+      // If longer, treat it as a state name
     } else if (searchInput.length > 2) {
-      return searchParams = `?state_name=${searchInput.charAt(0).toUpperCase()}${searchInput.slice(1)}`;
+      // Turn string into an array
+      const inputArray = searchInput.split(" ");
+
+      // Create a new array with capitalized words
+      const fixedArray = inputArray.map((word) => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      });
+
+      // define newStateString based on array length
+      if (fixedArray.length > 1) {
+        newStateString = fixedArray.join(" ");
+      }
+      // Return formatted search paramaters
+      return searchParams = `?state_name=${newStateString}`;
     }
 
   }
