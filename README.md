@@ -27,3 +27,5 @@ To run:
 =====================
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+Deployed to Heroku using [Heroku Buildpack](https://github.com/mars/create-react-app-buildpack).
