@@ -37,6 +37,7 @@ class App extends React.Component {
     const apiKey = 'ec606ee7e9324581a094bd96aeb3d15e';
     let state = this.validateUserInput(this.state.stateName);
     let url = `https://congress.api.sunlightfoundation.com/legislators${state}&per_page=50&order=chamber___desc,last_name__asc&page=${pageNum}&apikey=${apiKey}`;
+    console.log("url", url);
 
     let currentState = this.state.results;
 
@@ -87,9 +88,13 @@ class App extends React.Component {
       // define newStateString based on array length
       if (fixedArray.length > 1) {
         newStateString = fixedArray.join(" ");
+      } else {
+        newStateString = fixedArray[0];
       }
+
       // Return formatted search paramaters
-      return searchParams = `?state_name=${newStateString}`;
+      searchParams = `?state_name=${newStateString}`;
+      return searchParams;
     }
 
   }
