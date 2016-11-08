@@ -28,8 +28,13 @@ class Card extends React.Component {
 	}
 
 	positionInfo() {
-		if (this.props.chamber === 'house') {
+		// Check to see if this is a 'one representative' state
+		if (this.props.chamber === 'house' && this.props.district === 0) {
+			return 'At Large';
+		// Print district for other states
+		} else if (this.props.chamber === 'house') {
 			return `District ${this.props.district}`;
+		// Print state rank for Senators
 		} else {
 			return `${this.props.rank.charAt(0).toUpperCase()}${this.props.rank.slice(1)}`;
 		}

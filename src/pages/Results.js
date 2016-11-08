@@ -99,7 +99,6 @@ class Results extends React.Component {
 
     // Return list to createCards()
     return socialList;
-
   }
 
   render() {
