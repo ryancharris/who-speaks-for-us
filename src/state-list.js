@@ -55,6 +55,6 @@ const stateList = {
 	'WV': 'West Virginia',
 	'WI': 'Wisconsin',
 	'WY': 'Wyoming'
-}
+};
 
 export default stateList;

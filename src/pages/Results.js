@@ -17,7 +17,7 @@ class Results extends React.Component {
     for (let i = 0; i < results.length; i++) {
       let member = results[i];
       // Format name
-      let middlename = (member.middle_name) ? ' ' + member.middle_name + ' ' : ' ';
+      let middlename = (member.middle_name) ? ' ' + member.middle_name.charAt(0).toUpperCase() + '. ' : ' ';
       let name = `${member.title}. ${member.first_name} ${middlename} ${member.last_name}`;
       // Create social media list
       let socialList = this.createSocialList(member);
