@@ -181,6 +181,44 @@ body {
 	transition: all 0.25s ease-out;
 }
 
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip #tooltiptext {
+    visibility: visible;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    left: 50%;
+    margin-left: -70px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    /*transition: opacity 1s;*/
+}
+
+/* Tooltip arrow */
+.tooltip #tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
 .activated {
 	background-color: #FF1744;
 	transition: all 0.25s ease-out;

@@ -1,11 +1,13 @@
 import React from 'react';
 import Card from '../components/Card';
 import BackButton from '../components/BackButton';
+import stateList from '../state-list.js';
 
 class Results extends React.Component {
   constructor(props) {
     super(props);
     this.createCards = this.createCards.bind(this);
+    this.genStateHeader = this.genStateHeader.bind(this);
   }
 
   createCards() {
@@ -101,10 +103,23 @@ class Results extends React.Component {
     return socialList;
   }
 
+  genStateHeader() {
+    const state = this.props.state;
+
+    // If abbreviation, look up full name in stateList
+    if(state.length === 2) {
+      return stateList[state];
+    } else {
+      // If not, just return the validated name
+      return state;
+    }
+
+  }
+
   render() {
     return (
       <div>
-        {/*<h1 className="results-header">{this.props.state.toUpperCase()}</h1>*/}
+        <h1 className="results-header">{this.genStateHeader()}</h1>
         <div className="results-wrapper">
           {this.createCards()}
           <BackButton />

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import stateList from '../state-list.js';
+import { capitalize } from '../helpers.js'
 
 class SearchBar extends React.Component {
   constructor() {
@@ -8,7 +9,7 @@ class SearchBar extends React.Component {
     this.buttonActivate = this.buttonActivate.bind(this);
     this.buttonDeactivate = this.buttonDeactivate.bind(this);
     this.goToResults = this.goToResults.bind(this);
-    this.validateUserInput = this.validateUserInput.bind(this);
+    this.realState = this.realState.bind(this);
   }
 
   buttonActivate() {
@@ -20,44 +21,75 @@ class SearchBar extends React.Component {
   }
 
   goToResults(event) {
+    // Prevent form submission
     event.preventDefault();
-    // Get user input from state
-    let stateId = this.validateUserInput(this.searchInput.value);
-    // console.log('returned validated input', stateId);
 
-    this.context.router.transitionTo(`/state/${stateId}`);
+    // Get user input from state
+    let stateId = this.searchInput.value;
+
+    // If user inputs a proper state, reroute them to Results
+    // If not, prompt them to re-input their search
+    if (this.realState(stateId)) {
+
+      // Format user input for re-route
+      if (stateId.length === 2) {
+        stateId = stateId.toUpperCase();
+      } else if (stateId.length > 2) {
+        stateId = capitalize(stateId);
+      }
+
+      this.context.router.transitionTo(`/state/${stateId}`);
+
+    } else {
+      document.getElementById("tooltiptext").style.opacity = 1;
+    }
   }
 
-  validateUserInput(input) {
-    // const apiKey = 'ec606ee7e9324581a094bd96aeb3d15e';
-    // let validInput = ''
+  realState(input) {
+    let stateAbbreviations = [];
+    let stateNames = [];
 
-    // axios.get(`http://openstates.org/api/v1//metadata/?apikey=${apiKey}`)
-    //   .then((res) => {
-    //     console.log(res.data);
-    //     let responseArray = res.data;
+    // Input is not a valid state name or abbreviation
+    if (input.length === 1) {
+      return false;
+    } else if (input.length === 2) {
+      // See if input is a valid state abbreviation
+      stateAbbreviations = Object.keys(stateList);
 
-    //     for (let i = 0; i < responseArray.length; i++) {
-    //       if (input.toLowerCase() === responseArray[i].abbreviation.toLowerCase() || input.toLowerCase() === responseArray[i].name.toLowerCase()) {
-    //         console.log('input matches', input);
-    //         validInput = responseArray[i].name;
-    //       }
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+      if (stateAbbreviations.indexOf(input.toUpperCase()) !== -1 ) {
+        // If input is in array of abbreviations, return true
+        console.log(`${input} is a valid state abbrev`);
+        return true;
+      } else {
+        // If input is not in the array, return false
+        return false;
+      }
+      
+    } else {
+      // See if input is a valid state name
+      stateNames = Object.values(stateList);
+      
+      if (stateNames.indexOf(capitalize(input)) !== -1 ) {
+        // If input is in array of names, return true
+        console.log(`${capitalize(input)} is a valid state name`);
+        return true;
+      } else {
+        // If not, return false
+        return false;
+      }
 
-    // console.log('validInput  = ', validInput);
-    return input;
+    }
   }
 
   render() {
     return (
-      <form className="user-search" onFocus={this.buttonActivate} onBlur={this.buttonDeactivate} onSubmit={this.goToResults}>
-        <input type="text" required placeholder="e.g. Pennsylvania" ref={(input) => {this.searchInput = input}} />
-        <button type="submit" className="search-button deactivated"><i className="fa fa-search" aria-hidden="true"></i></button>
-      </form>
+      <div className="tooltip">
+        <form className="user-search" onFocus={this.buttonActivate} onBlur={this.buttonDeactivate} onSubmit={this.goToResults}>
+          <input type="text" required placeholder="e.g. Pennsylvania" ref={(input) => {this.searchInput = input}} />
+          <button type="submit" className="search-button deactivated"><i className="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+        <span id="tooltiptext">Please try again</span>
+      </div>
     );
   }
 }

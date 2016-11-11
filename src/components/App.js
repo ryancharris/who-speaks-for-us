@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+// import stateList from '../state-list.js';
 
 import Results from '../pages/Results';
 
@@ -9,7 +10,7 @@ class App extends React.Component {
 
     this.requestData = this.requestData.bind(this);
     this.populateResults = this.populateResults.bind(this);
-    this.validateUserInput = this.validateUserInput.bind(this);
+    this.formatUserInput = this.formatUserInput.bind(this);
 
     this.state = {
       stateName: this.props.params.stateId,
@@ -35,9 +36,8 @@ class App extends React.Component {
 
   requestData(pageNum) {
     const apiKey = 'ec606ee7e9324581a094bd96aeb3d15e';
-    let state = this.validateUserInput(this.state.stateName);
-    let url = `https://congress.api.sunlightfoundation.com/legislators${state}&per_page=50&order=chamber___desc,last_name__asc&page=${pageNum}&apikey=${apiKey}`;
-
+    const state = this.formatUserInput(this.state.stateName);
+    const url = `https://congress.api.sunlightfoundation.com/legislators${state}&per_page=50&order=chamber___desc,last_name__asc&page=${pageNum}&apikey=${apiKey}`;
     let currentState = this.state.results;
 
     axios.get(url)
@@ -64,38 +64,21 @@ class App extends React.Component {
       });
   }
 
-  validateUserInput(searchInput) {
+  formatUserInput(searchInput) {
     let searchParams = '';
-    let newStateString = '';
 
     // If the input is 2 characters, treat it as a state abbrev (ex. PA, UT, IA)
     if (searchInput.length === 2) {
       // Capitalize the state abbreviation
-      searchParams = `?state=${searchInput.toUpperCase()}`;
+      searchParams = `?state=${searchInput}`;
       return searchParams;
       
-      // If longer, treat it as a state name
     } else if (searchInput.length > 2) {
-      // Turn string into an array
-      const inputArray = searchInput.split(" ");
-
-      // Create a new array with capitalized words
-      const fixedArray = inputArray.map((word) => {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-      });
-
-      // define newStateString based on array length
-      if (fixedArray.length > 1) {
-        newStateString = fixedArray.join(" ");
-      } else {
-        newStateString = fixedArray[0];
-      }
-
-      // Return formatted search paramaters
-      searchParams = `?state_name=${newStateString}`;
+      // If longer, treat it as a state name
+      searchParams = `?state_name=${searchInput}`;
       return searchParams;
-    }
 
+    }
   }
 
   render() {
