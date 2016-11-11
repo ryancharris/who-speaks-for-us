@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import stateList from '../state-list.js';
 
 class SearchBar extends React.Component {
   constructor() {
