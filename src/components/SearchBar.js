@@ -58,7 +58,6 @@ class SearchBar extends React.Component {
 
       if (stateAbbreviations.indexOf(input.toUpperCase()) !== -1 ) {
         // If input is in array of abbreviations, return true
-        console.log(`${input} is a valid state abbrev`);
         return true;
       } else {
         // If input is not in the array, return false
@@ -71,7 +70,6 @@ class SearchBar extends React.Component {
       
       if (stateNames.indexOf(capitalize(input)) !== -1 ) {
         // If input is in array of names, return true
-        console.log(`${capitalize(input)} is a valid state name`);
         return true;
       } else {
         // If not, return false
