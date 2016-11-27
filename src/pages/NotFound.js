@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar';
+import BackButton from '../components/BackButton';
 import Footer from '../components/Footer';
 import Willis from '../img/gary-coleman.png';
 
@@ -17,6 +18,7 @@ class NotFound extends React.Component {
             <img src={Willis} alt="Whatcha looking for, Willis?" className="willis-photo" />
             <h3>Try again.</h3>
             <SearchBar />
+            <BackButton />
           </div>
           <Footer />
         </div>
