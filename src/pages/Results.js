@@ -2,12 +2,21 @@ import React from 'react';
 import Card from '../components/Card';
 import BackButton from '../components/BackButton';
 import stateList from '../state-list.js';
+import { realState } from '../helpers.js';
 
 class Results extends React.Component {
   constructor(props) {
     super(props);
     this.createCards = this.createCards.bind(this);
     this.genStateHeader = this.genStateHeader.bind(this);
+  }
+
+  componentWillMount() {
+    const currentPath = location.pathname.slice(7);
+
+    if( !realState(currentPath) ) {
+      location.pathname = "/notfound/";
+    }
   }
 
   createCards() {

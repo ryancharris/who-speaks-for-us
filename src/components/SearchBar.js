@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import stateList from '../state-list.js';
-import { capitalize } from '../helpers.js'
+import { capitalize, realState } from '../helpers.js'
 
 class SearchBar extends React.Component {
   constructor() {
@@ -9,7 +9,6 @@ class SearchBar extends React.Component {
     this.buttonActivate = this.buttonActivate.bind(this);
     this.buttonDeactivate = this.buttonDeactivate.bind(this);
     this.goToResults = this.goToResults.bind(this);
-    this.realState = this.realState.bind(this);
   }
 
   buttonActivate() {
@@ -29,7 +28,7 @@ class SearchBar extends React.Component {
 
     // If user inputs a proper state, reroute them to Results
     // If not, prompt them to re-input their search
-    if (this.realState(stateId)) {
+    if (realState(stateId)) {
 
       // Format user input for re-route
       if (stateId.length === 2) {
@@ -42,40 +41,6 @@ class SearchBar extends React.Component {
 
     } else {
       document.getElementById("tooltiptext").style.opacity = 1;
-    }
-  }
-
-  realState(input) {
-    let stateAbbreviations = [];
-    let stateNames = [];
-
-    // Input is not a valid state name or abbreviation
-    if (input.length === 1) {
-      return false;
-    } else if (input.length === 2) {
-      // See if input is a valid state abbreviation
-      stateAbbreviations = Object.keys(stateList);
-
-      if (stateAbbreviations.indexOf(input.toUpperCase()) !== -1 ) {
-        // If input is in array of abbreviations, return true
-        return true;
-      } else {
-        // If input is not in the array, return false
-        return false;
-      }
-      
-    } else {
-      // See if input is a valid state name
-      stateNames = Object.values(stateList);
-      
-      if (stateNames.indexOf(capitalize(input)) !== -1 ) {
-        // If input is in array of names, return true
-        return true;
-      } else {
-        // If not, return false
-        return false;
-      }
-
     }
   }
 
