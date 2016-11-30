@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import stateList from '../state-list.js';
 import { capitalize, realState } from '../helpers.js'
 
 class SearchBar extends React.Component {

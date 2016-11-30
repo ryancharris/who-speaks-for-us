@@ -12,11 +12,21 @@ class Results extends React.Component {
   }
 
   componentWillMount() {
-    const currentPath = location.pathname.slice(7);
+    let currentPath = location.pathname.slice(7);
+    console.log('currentPath', currentPath);
+
+    if(currentPath.indexOf('%') !== -1) {
+      const spaceIndex = currentPath.indexOf('%');
+      console.log('spaceIndex', spaceIndex);
+
+      currentPath = currentPath.slice(0, spaceIndex) + ' ' + currentPath.slice(spaceIndex + 3);
+      console.log('currentPath', currentPath);
+    }
 
     if( !realState(currentPath) ) {
-      location.pathname = "/notfound/";
+        location.pathname = "/notfound/";
     }
+
   }
 
   createCards() {
