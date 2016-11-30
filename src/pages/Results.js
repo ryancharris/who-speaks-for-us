@@ -11,19 +11,19 @@ class Results extends React.Component {
     this.genStateHeader = this.genStateHeader.bind(this);
   }
 
-  componentWillMount() {
-    let currentPath = location.pathname.slice(7);
+  // componentWillMount() {
+  //   let currentPath = location.pathname.slice(7);
 
-    if(currentPath.indexOf('%') !== -1) {
-      const spaceIndex = currentPath.indexOf('%');
-      currentPath = currentPath.slice(0, spaceIndex) + ' ' + currentPath.slice(spaceIndex + 3);
-    }
+  //   if(currentPath.indexOf('%') !== -1) {
+  //     const spaceIndex = currentPath.indexOf('%');
+  //     currentPath = currentPath.slice(0, spaceIndex) + ' ' + currentPath.slice(spaceIndex + 3);
+  //   }
 
-    if( !realState(currentPath) ) {
-        location.pathname = "/notfound/";
-    }
+  //   if( !realState(currentPath) ) {
+  //       location.pathname = "/notfound/";
+  //   }
 
-  }
+  // }
 
   createCards() {
     // Get member info from App's state
