@@ -16,7 +16,6 @@ class Results extends React.Component {
 
     if(currentPath.indexOf('%') !== -1) {
       const spaceIndex = currentPath.indexOf('%');
-
       currentPath = currentPath.slice(0, spaceIndex) + ' ' + currentPath.slice(spaceIndex + 3);
     }
 

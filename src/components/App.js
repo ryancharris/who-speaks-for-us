@@ -40,6 +40,12 @@ class App extends React.Component {
     const url = `https://congress.api.sunlightfoundation.com/legislators${state}&per_page=50&order=chamber___desc,last_name__asc&page=${pageNum}&apikey=${apiKey}`;
     let currentState = this.state.results;
 
+    axios({
+      method: 'get',
+      url: url,
+      headers: {'Access-Control-Allow-Origin': '*'}
+    });
+
     axios.get(url)
       .then((res) => {
         // Get # of results in request
