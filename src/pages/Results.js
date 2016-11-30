@@ -13,14 +13,11 @@ class Results extends React.Component {
 
   componentWillMount() {
     let currentPath = location.pathname.slice(7);
-    console.log('currentPath', currentPath);
 
     if(currentPath.indexOf('%') !== -1) {
       const spaceIndex = currentPath.indexOf('%');
-      console.log('spaceIndex', spaceIndex);
 
       currentPath = currentPath.slice(0, spaceIndex) + ' ' + currentPath.slice(spaceIndex + 3);
-      console.log('currentPath', currentPath);
     }
 
     if( !realState(currentPath) ) {
