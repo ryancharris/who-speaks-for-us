@@ -47,7 +47,7 @@ class SearchBar extends React.Component {
     return (
       <div className="tooltip">
         <form className="user-search" onFocus={this.buttonActivate} onBlur={this.buttonDeactivate} onSubmit={this.goToResults}>
-          <input type="text" required placeholder="e.g. Pennsylvania" ref={(input) => {this.searchInput = input}} />
+          <input type="text" required placeholder="Enter your state..." ref={(input) => {this.searchInput = input}} />
           <button type="submit" className="search-button deactivated"><i className="fa fa-search" aria-hidden="true"></i></button>
         </form>
         <span id="tooltiptext">Please try again</span>
