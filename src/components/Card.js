@@ -28,7 +28,6 @@ class Card extends React.Component {
     xhr.send();
 
     if (xhr.status === 404) {
-        console.log("File doesn't exist");
         return false;
     } else {
         // console.log("File exists");

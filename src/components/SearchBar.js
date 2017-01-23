@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { capitalize, realState } from '../helpers.js'
 
 class SearchBar extends React.Component {

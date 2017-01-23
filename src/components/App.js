@@ -40,7 +40,7 @@ class App extends React.Component {
     const url = `https://congress.api.sunlightfoundation.com/legislators${state}&per_page=50&order=chamber___desc,last_name__asc&page=${pageNum}&apikey=${apiKey}`;
     let currentState = this.state.results;
 
-    axios.get(url)
+    axios(url)
       .then((res) => {
         // Get # of results in request
         let responseCount = res.data.count;
@@ -72,7 +72,7 @@ class App extends React.Component {
       // Capitalize the state abbreviation
       searchParams = `?state=${searchInput}`;
       return searchParams;
-      
+
     } else if (searchInput.length > 2) {
       // If longer, treat it as a state name
       searchParams = `?state_name=${searchInput}`;
