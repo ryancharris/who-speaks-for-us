@@ -1,8 +1,10 @@
 import React from 'react';
+import missingImage from '../img/missing-image.jpg';
 
 class Card extends React.Component {
 	constructor() {
 		super();
+		this.doesPicExist = this.doesPicExist.bind(this);
 		this.getPhoto = this.getPhoto.bind(this);
 		this.getPartyColor = this.getPartyColor.bind(this);
 		this.positionInfo = this.positionInfo.bind(this);
@@ -19,12 +21,35 @@ class Card extends React.Component {
 		}
 	}
 
+	doesPicExist(urlToFile) {
+		// detect if profile image exists in GitHub repo
+		const xhr = new XMLHttpRequest();
+    xhr.open('HEAD', urlToFile, false);
+    xhr.send();
+
+    if (xhr.status === 404) {
+        console.log("File doesn't exist");
+        return false;
+    } else {
+        // console.log("File exists");
+        return true;
+    }
+	}
+
 	getPhoto() {
 		// Images hosted on: github.com/unitedstates/images
 		const bioguide = this.props.bioguide;
-		const imgLink = `http://theunitedstates.io/images/congress/450x550/${bioguide}.jpg`;
+		const imgLink = `https://theunitedstates.io/images/congress/450x550/${bioguide}.jpg`;
+		let pic;
 
-		return imgLink;
+		// test for existing image and either return it or a placeholder
+		if (this.doesPicExist(imgLink)) {
+			pic = imgLink;
+		} else {
+			pic = missingImage;
+		}
+
+		return pic;
 	}
 
 	positionInfo() {
